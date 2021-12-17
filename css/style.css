@@ -1,0 +1,200 @@
+/* debugging
+* {
+  border: 1px solid #c51f5d;
+  margin: 4px;
+  padding: 5px;
+} */
+
+/* currently color palette:
+    - Night Mode Twitter
+    - https://www.color-hex.com/color-palette/55334
+*/
+:root {
+  --background: #141d26;
+  --tile: #243447;
+  --tile2: #243447;
+  --accent: #c51f5d;
+  --text: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.name-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-size: 148px;
+  padding: 0 0 0 18vw;
+}
+
+.last {
+  color: var(--accent);
+}
+
+.degree-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.school-major-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.school-title, .school-text {
+  text-align: right;
+}
+
+.school-major-container, .minor-container {
+  margin: 0 0 0 5vw;
+}
+
+.school-container {
+  margin: 0 5vw 0 0;
+}
+
+.major-title, .minor-title, .school-title {
+  font-size: 32px;
+  color: var(--tile);
+  margin 0;
+}
+
+.major-text, .minor-text, .school-text {
+  font-size: 24px;
+}
+
+.major-text p, .frontend-title p, .ai-title p, .network-title p, .os-title p, .infosec-title p {
+  color: var(--accent);
+  display: inline;
+}
+
+.frontend-title, .soon {
+  font-size: 28px;
+  margin: 0 0 2vh 5vw;
+}
+
+.soon {
+  text-decoration: underline;
+  margin-top: 5vh;
+  margin-bottom: 3vw;
+}
+
+.ai-title, .network-title, .os-title, .infosec-title {
+  font-size: 24px;
+  margin: 0 0 0.5vh 8vw;
+}
+
+.degree-container {
+  margin: 0 0 20vh 0;
+}
+
+.projects-title {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 48px;
+  margin: 0 0 10vh 0;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-evenly;
+}
+
+.project {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+
+.project img:hover {
+  animation-name: pop_shadow;
+  animation-duration: 0.2s;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.project img {
+  z-index: -1;
+  max-width: 80%;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  border: 2px solid var(--tile);
+  display:inline;
+  animation-name: no_shadow;
+  animation-duration: 0.2s;
+  animation-direction: forwards;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+}
+
+@keyframes pop_shadow {
+  from {
+    right: 0px;
+    bottom: 0px;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    z-index: -1;
+  }
+  to {
+    right: 5px;
+    bottom: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .33);
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    z-index: 5;
+
+  }
+}
+
+@keyframes no_shadow {
+  from {
+    right: 5px;
+    bottom: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .33);
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    z-index: 5;
+
+  }
+  to {
+    right: 0px;
+    bottom: 0px;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    z-index: -1;
+
+  }
+}
+
+
+
+footer {
+  display: flex;
+  background-color: var(--tile);
+  height: 3vh;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+}
+
+.fas, .copyright {
+  color: var(--accent);
+}
+
+.footer_text {
+    text-align: center;
+}
